@@ -2,8 +2,12 @@ RGBLIGHT_ENABLE = yes
 
 OLED_ENABLE = yes
 
-VIA_ENABLE = yes
+VIA_ENABLE = no
 
 TAP_DANCE_ENABLE = yes
+
+AUTO_SHIFT_ENABLE = yes
+
+CAPS_WORD_ENABLE = yes
 
 SRC += tap_dance.c
