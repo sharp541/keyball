@@ -39,8 +39,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
   [_DEFAULT_LAYER] = LAYOUT_universal(
     KC_Q     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
-    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , S(KC_DOT)  ,
-    KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_BTN1 , LT(_MOUSE_LAYER,KC_BTN2)   , C(KC_COMM)  ,
+    KC_A     , KC_S     , KC_D     , KC_F     , KC_G     ,                            KC_H     , KC_J     , KC_K     , KC_L     , CTL_T(KC_DOT)  ,
+    KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_BTN1 , LT(_MOUSE_LAYER,KC_BTN2)   , SFT_T(KC_COMM)  ,
     TD(LANG2_CTL)  , KC_LGUI  , LSFT_T(KC_ESC)  ,LT(_OPERATION_LAYER,KC_TAB),LT(_SYMBOL_LAYER,KC_SPC),TD(LANG1_MOUSE_LAYER),                 LT(_OPERATION_LAYER, KC_ENT),LT(_SYMBOL_LAYER,KC_BSPC),_______,_______,_______, TD(CW_ALT)
   ),
 
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MOUSE_LAYER] = LAYOUT_universal(
     KC_F5  , KC_F6   , KC_F7  , KC_F8  , KC_F9  ,                            _______  , _______  , _______ , _______ , QK_BOOT ,
     KC_F10 , KC_F1  , KC_F2  , KC_F3  , KC_F4 ,                            SSNP_CYC  , C(KC_PGUP)  , C(KC_PGDN)  , _______  , _______  ,
-    KC_PSCR , _______  , _______  , KC_F11  , KC_F12 ,                            RCS(KC_T)  , C(KC_T) , C(KC_W) , _______  , RCS(KC_BTN1) ,
+    KC_PSCR , _______  , _______  , KC_F11  , KC_F12 ,                            RCS(KC_T)  , C(KC_T) , C(KC_W) , _______  , C(KC_BTN1) ,
     KC_LCTL  , KC_LGUI  , KC_LSFT  , _______  , _______  , KC_DELETE  ,      KC_BTN5  , KC_BTN4  , _______  , _______  , _______ , SCRL_TO
   ),
 };
