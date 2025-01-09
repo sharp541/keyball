@@ -33,9 +33,14 @@ const uint16_t AML_TIMEOUT_MIN = 100;
 const uint16_t AML_TIMEOUT_MAX = 1000;
 const uint16_t AML_TIMEOUT_QU  = 50;   // Quantization Unit
 
-static const char BL = '\xB0'; // Blank indicator character
+#ifdef OLED_ENABLE
 static const char LFSTR_ON[] PROGMEM = "\xB2\xB3";
 static const char LFSTR_OFF[] PROGMEM = "\xB4\xB5";
+#endif
+
+enum {
+    BL = '\xB0', // Blank indicator character
+};
 
 keyball_t keyball = {
     .this_have_ball = false,
@@ -606,6 +611,7 @@ void housekeeping_task_kb(void) {
 #endif
 
 static void pressing_keys_update(uint16_t keycode, keyrecord_t *record) {
+    #ifdef OLED_ENABLE
     // Process only valid keycodes.
     if (keycode >= 4 && keycode < 57) {
         char value = pgm_read_byte(code_to_name + keycode - 4);
@@ -623,6 +629,7 @@ static void pressing_keys_update(uint16_t keycode, keyrecord_t *record) {
             }
         }
     }
+    #endif
 }
 
 #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
@@ -728,6 +735,9 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 break;
             case SSNP_FRE:
                 keyball_set_scrollsnap_mode(KEYBALL_SCROLLSNAP_MODE_FREE);
+                break;
+            case SSNP_CYC:
+                keyball_set_scrollsnap_mode((keyball_get_scrollsnap_mode() + 1) % (KEYBALL_SCROLLSNAP_MODE_FREE + 1));
                 break;
 #endif
 
