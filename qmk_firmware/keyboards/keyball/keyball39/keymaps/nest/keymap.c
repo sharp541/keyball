@@ -101,6 +101,11 @@ combo_t key_combos[] = {
     [DOT_L_COMBO] = COMBO(dot_l_combo, KC_DOT),
     [BSPC_R_COMBO] = COMBO(bspc_r_combo, C(KC_BSPC)),
     [BSPC_L_COMBO] = COMBO(bspc_l_combo, KC_BSPC),
+    [HOME_R_COMBO] = COMBO(home_r_combo, KC_HOME),
+    [END_R_COMBO] = COMBO(end_r_combo, KC_END),
+    [ESC_R_COMBO] = COMBO(esc_r_combo, KC_ESC),
+    [ALT_L_COMBO] = COMBO(alt_l_combo, KC_LALT),
+    [GUI_L_COMBO] = COMBO(gui_l_combo, KC_LGUI),
 };
 #endif
 
