@@ -40,32 +40,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "custom_keys.h"
 
 #define NUM_L LT(_NUMBER_LAYER,KC_TAB)
-#define NUM_R LT(_NUMBER_LAYER,KC_DELETE)
 #define SYM_R LT(_SYMBOL_LAYER,KC_BSPC)
 #define MO_RBTN LT(_MOUSE_LAYER,KC_BTN2)
-#define FN_L LT(_FUNCTION_LAYER,KC_ESC)
+#define FN_L LT(_FUNCTION_LAYER,KC_SPC)
 
-// clang-format off
+// clang-format offLl
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
-    KC_Q     , KC_R     , KC_E     , KC_D   , KC_DOT  ,                 KC_COMM , KC_W    , KC_B    , KC_G    , KC_L ,
-    KC_K     , KC_T     , KC_A     , KC_I   , KC_S    ,                 KC_Y    , KC_N    , KC_O    , KC_U    , KC_H ,
-    KC_V     , KC_X     , KC_C     , KC_J   , KC_Z    ,                 KC_P    , KC_M    , KC_BTN1 , MO_RBTN , KC_F ,
-    KC_LCTL  , KC_LALT  , KC_LGUI  , SFT_T(KC_SPC) , NUM_L , FN_L,         NUM_R , SYM_R , _______ , _______ , _______ , CW_TOGG
+    KC_Z     , KC_H     , KC_M     , KC_G   , KC_Q  ,                   KC_C    , KC_X    , KC_E    , KC_F    , KC_W ,
+    KC_S     , KC_R     , KC_N     , KC_T   , KC_K  ,                 KC_P    , KC_I    , KC_O    , KC_A    , KC_U ,
+    KC_V     , KC_J     , KC_L     , KC_D   , KC_B  ,                 CKC_MNS , KC_Y    , KC_BTN1 , MO_RBTN , CW_TOGG ,
+    _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , KC_RCTL
   ),
 
   [_NUMBER_LAYER] = LAYOUT_universal(
-    KC_5  , KC_6  , KC_7 , KC_8 , KC_9 ,                                    KC_HOME    , KC_UP      , KC_END   , _______ , _______   ,
-    KC_0  , KC_1  , KC_2 , KC_3 , KC_4   ,                                  KC_LEFT    , KC_DOWN    , KC_RIGHT , KC_RALT , _______  ,
-    _______ , _______ , KC_COLN , KC_MINUS , KC_DOT     ,                   C(KC_HOME) , C(KC_PGDN) , C(KC_END), KC_RGUI , _______   ,
-    KC_LCTL  , KC_LALT   , KC_LGUI  , KC_LSFT  , _______  , KC_BTN2  ,      _______    , _______    , _______  , _______ , _______  , _______
+    KC_5  , KC_6  , KC_7 , KC_8 , KC_9 ,                                    _______ , _______ , _______ , _______ , _______ ,
+    KC_0  , KC_1  , KC_2 , KC_3 , KC_4   ,                                  _______ , _______ , _______ , _______ , _______ ,
+    _______ , _______ , KC_COLN , KC_MINUS , KC_DOT     ,                   _______ , _______ , KC_BTN1 , KC_BTN2 , KC_BTN3 ,
+    KC_LCTL  , KC_LALT   , KC_LGUI  , _______  , _______  , _______  ,      _______ , _______ , _______ , _______ , _______ , _______
   ),
 
 
   [_SYMBOL_LAYER] = LAYOUT_universal(
-    KC_CIRC , _______ , KC_PERC , KC_AMPR , KC_PIPE ,                            KC_UNDS , CKC_BRC , CKC_ABK  , KC_GRV , KC_QUES ,
-    KC_AT   , KC_HASH , KC_DLR  , CKC_AST , CKC_PLS ,                            CKC_MNS , CKC_PRN , CKC_BRCT , _______ , KC_SCLN ,
-    _______ , CKC_LES , CKC_GRT , CKC_EXC , KC_EQL  ,                            CKC_SL  , KC_DQT , KC_QUOT , _______ , KC_COLN ,
+    KC_CIRC , _______ , KC_PERC , KC_AMPR , KC_PIPE ,                            _______ , CKC_BRC , CKC_LES  , CKC_GRT , KC_QUES ,
+    KC_AT   , KC_HASH , KC_DLR  , CKC_AST , CKC_PLS ,                            KC_UNDS , CKC_PRN , CKC_BRCT , KC_COLN , KC_SCLN ,
+    _______ , CKC_LES , CKC_GRT , CKC_EXC , KC_EQL  ,                            CKC_SL  , KC_DQT , KC_QUOT , KC_GRV , _______ ,
     KC_LCTL , KC_LALT , KC_LGUI , KC_LNG2  , KC_LNG1  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
   ),
 
@@ -73,14 +72,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______ , _______ , _______ , _______  , SGUI(KC_S) ,                      _______   , _______    , _______    , _______ , _______ ,
     C(KC_A) , C(KC_S) , C(KC_Z) , C(KC_Y)  , _______ ,                         SSNP_CYC  , C(KC_PGUP) , C(KC_PGDN) , _______ , _______  ,
     _______ , C(KC_X) , C(KC_C) , C(KC_V)  , _______ ,                         RCS(KC_T) , C(KC_T)    , C(KC_W)    , _______ , KC_BTN3 ,
-    KC_LCTL , KC_LALT , KC_LGUI , C(KC_SLSH)  , C(KC_LCBR)  , C(KC_RCBR)  ,      KC_BTN5  , KC_BTN4  , _______  , _______  , _______ , G(KC_TAB)
+    KC_LCTL , KC_LALT , KC_LGUI , C(KC_SLSH)  , C(KC_LBRC)  , C(KC_RBRC)  ,      KC_BTN5  , KC_BTN4  , _______  , _______  , _______ , _______
   ),
 
   [_FUNCTION_LAYER] = LAYOUT_universal(
     KC_F5  , KC_F6  , KC_F7 , KC_F8 , KC_F9 ,                           CPI_D100 , CPI_I100 , SCRL_DVI , SCRL_DVD, QK_BOOT   ,
     KC_F10  , KC_F1  , KC_F2 , KC_F3 , KC_F4 ,                          _______ , _______ , _______ , _______, _______   ,
-    _______ , _______ , _______ , KC_F12 , KC_F11     ,                 _______ , _______ , _______ , _______, _______   ,
-    KC_LCTL  , KC_LALT   , KC_LGUI  , _______  , _______  , _______  ,  _______ , _______ , _______ , _______, _______, _______
+    _______ , _______ , _______ , KC_F12 , KC_F11     ,                 _______ , _______ , KC_BTN1 , KC_BTN2, KC_BTN3   ,
+    KC_LCTL  , KC_LALT   , KC_LGUI  , _______  , KC_LSFT  , KC_BTN2  ,  _______ , _______ , _______ , _______, _______, _______
   ),
 };
 // clang-format on
@@ -89,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef COMBO_ENABLE
 combo_t key_combos[] = {
     [ENT_R_COMBO] = COMBO(ent_r_combo, KC_ENT),
-    [ENT_L_COMBO] = COMBO(ent_l_combo, KC_ENT),
+    [ENT_L_COMBO] = COMBO(ent_l_combo, SFT_T(KC_ENT)),
     [RARR_R_COMBO] = COMBO(rarr_r_combo, KC_RIGHT),
     [RARR_L_COMBO] = COMBO(rarr_l_combo, KC_RIGHT),
     [LARR_R_COMBO] = COMBO(larr_r_combo, KC_LEFT),
@@ -98,6 +97,10 @@ combo_t key_combos[] = {
     [UARR_L_COMBO] = COMBO(uarr_l_combo, KC_UP),
     [DARR_R_COMBO] = COMBO(darr_r_combo, KC_DOWN),
     [DARR_L_COMBO] = COMBO(darr_l_combo, KC_DOWN),
+    [COMMA_R_COMBO] = COMBO(comma_r_combo, KC_COMM),
+    [DOT_L_COMBO] = COMBO(dot_l_combo, KC_DOT),
+    [BSPC_R_COMBO] = COMBO(bspc_r_combo, C(KC_BSPC)),
+    [BSPC_L_COMBO] = COMBO(bspc_l_combo, KC_BSPC),
 };
 #endif
 
