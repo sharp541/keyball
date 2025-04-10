@@ -47,9 +47,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format offLl
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
-    KC_Z     , KC_H     , KC_M     , KC_G   , KC_Q  ,                   KC_C    , KC_X    , KC_E    , KC_F    , KC_W ,
+    KC_Z     , KC_H     , KC_M     , KC_G   , KC_Q  ,                   _______    , KC_X    , KC_E    , KC_F    , KC_W ,
     KC_S     , KC_R     , KC_N     , KC_T   , KC_K  ,                 KC_P    , KC_I    , KC_O    , KC_A    , KC_U ,
-    KC_V     , KC_J     , KC_L     , KC_D   , KC_B  ,                 CKC_MNS , KC_Y    , KC_BTN1 , MO_RBTN , CW_TOGG ,
+    KC_V     , KC_J     , KC_L     , KC_D   , KC_B  ,                 CW_TOGG , KC_Y    , KC_BTN1 , MO_RBTN , KC_C ,
     _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , KC_RCTL
   ),
 
@@ -62,8 +62,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   [_SYMBOL_LAYER] = LAYOUT_universal(
-    KC_CIRC , _______ , KC_PERC , KC_AMPR , KC_PIPE ,                            _______ , CKC_BRC , CKC_LES  , CKC_GRT , KC_QUES ,
-    KC_AT   , KC_HASH , KC_DLR  , CKC_AST , CKC_PLS ,                            KC_UNDS , CKC_PRN , CKC_BRCT , KC_COLN , KC_SCLN ,
+    KC_CIRC , _______ , KC_PERC , KC_AMPR , KC_PIPE ,                            KC_UNDS , CKC_BRC , CKC_LES  , CKC_GRT , KC_QUES ,
+    KC_AT   , KC_HASH , KC_DLR  , CKC_AST , CKC_PLS ,                            CKC_MNS , CKC_PRN , CKC_BRCT , KC_COLN , KC_SCLN ,
     _______ , CKC_LES , CKC_GRT , CKC_EXC , KC_EQL  ,                            CKC_SL  , KC_DQT , KC_QUOT , KC_GRV , _______ ,
     KC_LCTL , KC_LALT , KC_LGUI , KC_LNG2  , KC_LNG1  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
   ),
