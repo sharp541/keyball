@@ -47,9 +47,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format offLl
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
-    KC_B     , KC_M     , KC_D     , KC_Z   , KC_X  ,                 _______ , _______ , KC_E    , KC_P    , KC_V ,
+    KC_B     , KC_M     , KC_D     , KC_Z   , KC_X  ,                 KC_DOT  , KC_COMM , KC_E    , KC_P    , KC_V ,
     KC_S     , KC_K     , KC_T     , KC_N   , KC_L  ,                 KC_F    , KC_A    , KC_O    , KC_I    , KC_U ,
-    KC_F     , KC_H     , KC_G     , KC_R   , KC_Y  ,                 KC_Q    , KC_J    , KC_BTN1 , MO_RBTN , KC_C ,
+    KC_W     , KC_H     , KC_G     , KC_R   , KC_Y  ,                 KC_Q    , KC_J    , KC_BTN1 , MO_RBTN , KC_C ,
     _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , CW_TOGG
   ),
 
@@ -90,15 +90,10 @@ combo_t key_combos[] = {
     [ENT_R_COMBO] = COMBO(ent_r_combo, KC_ENT),
     [ENT_L_COMBO] = COMBO(ent_l_combo, SFT_T(KC_ENT)),
     [RARR_R_COMBO] = COMBO(rarr_r_combo, KC_RIGHT),
-    [RARR_L_COMBO] = COMBO(rarr_l_combo, KC_RIGHT),
     [LARR_R_COMBO] = COMBO(larr_r_combo, KC_LEFT),
-    [LARR_L_COMBO] = COMBO(larr_l_combo, KC_LEFT),
     [UARR_R_COMBO] = COMBO(uarr_r_combo, KC_UP),
-    [UARR_L_COMBO] = COMBO(uarr_l_combo, KC_UP),
     [DARR_R_COMBO] = COMBO(darr_r_combo, KC_DOWN),
-    [DARR_L_COMBO] = COMBO(darr_l_combo, KC_DOWN),
-    [COMMA_R_COMBO] = COMBO(comma_r_combo, KC_COMM),
-    [DOT_L_COMBO] = COMBO(dot_l_combo, KC_DOT),
+    [DOT_R_COMBO] = COMBO(dot_r_combo, KC_DOT),
     [BSPC_R_COMBO] = COMBO(bspc_r_combo, C(KC_BSPC)),
     [BSPC_L_COMBO] = COMBO(bspc_l_combo, KC_BSPC),
     [HOME_R_COMBO] = COMBO(home_r_combo, KC_HOME),
@@ -106,6 +101,7 @@ combo_t key_combos[] = {
     [ESC_R_COMBO] = COMBO(esc_r_combo, KC_ESC),
     [ALT_L_COMBO] = COMBO(alt_l_combo, KC_LALT),
     [GUI_L_COMBO] = COMBO(gui_l_combo, KC_LGUI),
+    [CTRL_L_COMBO] = COMBO(ctrl_l_combo, KC_LCTL),
 };
 #endif
 
