@@ -60,7 +60,7 @@ const uint16_t PROGMEM esc_r_combo[] = {KC_I, KC_U, COMBO_END};
 const uint16_t PROGMEM alt_l_combo[] = {KC_B, KC_M, COMBO_END};
 
 // gui
-const uint16_t PROGMEM gui_l_combo[] = {KC_F, KC_H, COMBO_END};
+const uint16_t PROGMEM gui_l_combo[] = {KC_W, KC_H, COMBO_END};
 
 // ctrl
 const uint16_t PROGMEM ctrl_l_combo[] = {KC_S, KC_K, COMBO_END};
