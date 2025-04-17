@@ -47,10 +47,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format offLl
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
-    KC_Z     , KC_H     , KC_M     , KC_G   , KC_Q  ,                   _______    , KC_X    , KC_E    , KC_F    , KC_W ,
-    KC_S     , KC_R     , KC_N     , KC_T   , KC_K  ,                 KC_P    , KC_I    , KC_O    , KC_A    , KC_U ,
-    KC_V     , KC_J     , KC_L     , KC_D   , KC_B  ,                 CW_TOGG , KC_Y    , KC_BTN1 , MO_RBTN , KC_C ,
-    _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , KC_RCTL
+    KC_B     , KC_M     , KC_D     , KC_Z   , KC_X  ,                 _______ , _______ , KC_E    , KC_P    , KC_V ,
+    KC_S     , KC_K     , KC_T     , KC_N   , KC_L  ,                 KC_F    , KC_A    , KC_O    , KC_I    , KC_U ,
+    KC_F     , KC_H     , KC_G     , KC_R   , KC_Y  ,                 KC_Q    , KC_J    , KC_BTN1 , MO_RBTN , KC_C ,
+    _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , CW_TOGG
   ),
 
   [_NUMBER_LAYER] = LAYOUT_universal(
