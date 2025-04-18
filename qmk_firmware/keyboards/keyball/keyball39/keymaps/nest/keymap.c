@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
     KC_B     , KC_M     , KC_D     , KC_Z   , KC_X  ,                 KC_DOT  , KC_COMM , KC_E    , KC_P    , KC_V ,
     KC_S     , KC_K     , KC_T     , KC_N   , KC_L  ,                 KC_F    , KC_A    , KC_O    , KC_I    , KC_U ,
-    KC_W     , KC_H     , KC_G     , KC_R   , KC_Y  ,                 KC_Q    , KC_J    , KC_BTN1 , MO_RBTN , KC_C ,
+    KC_W     , KC_H     , KC_G     , KC_R   , KC_J  ,                 KC_Q    , KC_Y    , KC_BTN1 , MO_RBTN , KC_C ,
     _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , CW_TOGG
   ),
 

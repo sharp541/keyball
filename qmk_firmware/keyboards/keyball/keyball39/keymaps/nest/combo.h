@@ -29,7 +29,7 @@ const uint16_t PROGMEM ent_r_combo[] = {KC_O, KC_I, COMBO_END};
 const uint16_t PROGMEM ent_l_combo[] = {KC_K, KC_T, COMBO_END};
 
 // right arrow
-const uint16_t PROGMEM rarr_r_combo[] = {KC_Q, KC_J, COMBO_END};
+const uint16_t PROGMEM rarr_r_combo[] = {KC_Q, KC_Y, COMBO_END};
 
 // left arrow
 const uint16_t PROGMEM larr_r_combo[] = {KC_F, KC_Q, COMBO_END};
@@ -41,7 +41,7 @@ const uint16_t PROGMEM uarr_r_combo[] = {KC_E, KC_P, COMBO_END};
 const uint16_t PROGMEM darr_r_combo[] = {KC_A, KC_E, KC_P, COMBO_END};
 
 // dot
-const uint16_t PROGMEM dot_r_combo[] = {KC_J, KC_O, KC_I, COMBO_END};
+const uint16_t PROGMEM dot_r_combo[] = {KC_Y, KC_O, KC_I, COMBO_END};
 
 // backspace
 const uint16_t PROGMEM bspc_r_combo[] = {KC_A, KC_O, KC_I, COMBO_END};
