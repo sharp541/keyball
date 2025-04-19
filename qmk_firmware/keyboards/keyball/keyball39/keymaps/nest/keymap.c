@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_5  , KC_6  , KC_7 , KC_8 , KC_9 ,                                    _______ , _______ , _______ , _______ , _______ ,
     KC_0  , KC_1  , KC_2 , KC_3 , KC_4   ,                                  _______ , _______ , _______ , _______ , _______ ,
     _______ , _______ , KC_COLN , KC_MINUS , KC_DOT     ,                   _______ , _______ , KC_BTN1 , KC_BTN2 , KC_BTN3 ,
-    KC_LCTL  , KC_LALT   , KC_LGUI  , _______  , _______  , _______  ,      _______ , _______ , _______ , _______ , _______ , _______
+    _______  , _______   , _______  , _______  , _______  , _______  ,      _______ , _______ , _______ , _______ , _______ , _______
   ),
 
 
@@ -65,21 +65,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CIRC , _______ , KC_PERC , KC_AMPR , KC_PIPE ,                            KC_UNDS , CKC_BRC , CKC_LES  , CKC_GRT , KC_QUES ,
     KC_AT   , KC_HASH , KC_DLR  , CKC_AST , CKC_PLS ,                            CKC_MNS , CKC_PRN , CKC_BRCT , KC_COLN , KC_SCLN ,
     _______ , CKC_LES , CKC_GRT , CKC_EXC , KC_EQL  ,                            CKC_SL  , KC_DQT , KC_QUOT , KC_GRV , _______ ,
-    KC_LCTL , KC_LALT , KC_LGUI , KC_LNG2  , KC_LNG1  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
+    _______ , _______ , _______ , KC_LNG2  , KC_LNG1  , _______  ,      _______  , _______  , _______  , _______  , _______  , _______
   ),
 
   [_MOUSE_LAYER] = LAYOUT_universal(
     _______ , _______ , _______ , _______  , SGUI(KC_S) ,                      _______   , _______    , _______    , _______ , _______ ,
     C(KC_A) , C(KC_S) , C(KC_Z) , C(KC_Y)  , _______ ,                         SSNP_CYC  , C(KC_PGUP) , C(KC_PGDN) , _______ , _______  ,
     _______ , C(KC_X) , C(KC_C) , C(KC_V)  , _______ ,                         RCS(KC_T) , C(KC_T)    , C(KC_W)    , _______ , KC_BTN3 ,
-    KC_LCTL , KC_LALT , KC_LGUI , C(KC_SLSH)  , C(KC_LBRC)  , C(KC_RBRC)  ,      KC_BTN5  , KC_BTN4  , _______  , _______  , _______ , _______
+    _______ , _______ , _______ , C(KC_SLSH)  , C(KC_LBRC)  , C(KC_RBRC)  ,      KC_BTN5  , KC_BTN4  , _______  , _______  , _______ , _______
   ),
 
   [_FUNCTION_LAYER] = LAYOUT_universal(
     KC_F5  , KC_F6  , KC_F7 , KC_F8 , KC_F9 ,                           CPI_D100 , CPI_I100 , SCRL_DVI , SCRL_DVD, QK_BOOT   ,
     KC_F10  , KC_F1  , KC_F2 , KC_F3 , KC_F4 ,                          _______ , _______ , _______ , _______, _______   ,
-    _______ , _______ , _______ , KC_F12 , KC_F11     ,                 _______ , _______ , KC_BTN1 , KC_BTN2, KC_BTN3   ,
-    KC_LCTL  , KC_LALT   , KC_LGUI  , _______  , KC_LSFT  , KC_BTN2  ,  _______ , _______ , _______ , _______, _______, _______
+    _______ , _______ , _______ , KC_F12 , KC_F11     ,                 TG(_GAME_LAYER) , _______ , KC_BTN1 , KC_BTN2, KC_BTN3   ,
+    _______  , _______   , _______  , _______  , KC_LSFT  , KC_BTN2  ,  _______ , _______ , _______ , _______, _______, _______
+  ),
+  [_GAME_LAYER] = LAYOUT_universal(
+    KC_Q , KC_W , KC_E , KC_R , KC_T ,                                  KC_Y , KC_U , KC_I , KC_O , KC_P ,
+    KC_A , KC_S , KC_D , KC_F , KC_G ,                                  KC_H , KC_J , KC_K , KC_L , KC_P ,
+    KC_Z , KC_X , KC_C , KC_V , KC_B ,                                  KC_N , KC_M , KC_BTN1 , MO_RBTN , KC_BTN2 ,
+    _______ , _______   , _______  , KC_BSPC  , KC_LSFT  , _______  ,  TG(_GAME_LAYER) , KC_BTN2 , _______ , _______, _______, _______
   ),
 };
 // clang-format on
@@ -130,6 +136,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(LAYER_LIGHTING_NUMBER, layer_state_cmp(state, _NUMBER_LAYER));
     rgblight_set_layer_state(LAYER_LIGHTING_SYMBOL, layer_state_cmp(state, _SYMBOL_LAYER));
     rgblight_set_layer_state(LAYER_LIGHTING_FUNCTION, layer_state_cmp(state, _FUNCTION_LAYER));
+    rgblight_set_layer_state(LAYER_LIGHTING_GAME, layer_state_cmp(state, _GAME_LAYER));
 
     keyball_scrollsnap_mode_t mode = keyball_get_scrollsnap_mode();
     rgblight_set_layer_state(LAYER_LIGHTING_MOUSE_VRT, layer_state_cmp(state, _MOUSE_LAYER) && (mode == KEYBALL_SCROLLSNAP_MODE_VERTICAL));

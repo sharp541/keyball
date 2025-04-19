@@ -30,6 +30,10 @@ const rgblight_segment_t PROGMEM mouse_layer_fre[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, MAX_LEDS, HSV_PINK}
 );
 
+const rgblight_segment_t PROGMEM game_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, MAX_LEDS, HSV_WHITE}
+);
+
 enum layer_lighting_number {
     LAYER_LIGHTING_DEFAULT = 0,
     LAYER_LIGHTING_MOUSE_VRT,
@@ -37,7 +41,8 @@ enum layer_lighting_number {
     LAYER_LIGHTING_MOUSE_FRE,
     LAYER_LIGHTING_NUMBER,
     LAYER_LIGHTING_SYMBOL,
-    LAYER_LIGHTING_FUNCTION
+    LAYER_LIGHTING_FUNCTION,
+    LAYER_LIGHTING_GAME
 };
 
 
@@ -48,5 +53,6 @@ const rgblight_segment_t* const PROGMEM light_layers[] = {
     mouse_layer_fre,
     number_layer,
     symbol_layer,
-    function_layer
+    function_layer,
+    game_layer
 };

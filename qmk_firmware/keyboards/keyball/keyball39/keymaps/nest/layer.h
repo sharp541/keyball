@@ -4,4 +4,5 @@ enum layer_number {
     _SYMBOL_LAYER,
     _MOUSE_LAYER,
     _FUNCTION_LAYER,
+    _GAME_LAYER,
 };
