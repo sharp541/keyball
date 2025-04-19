@@ -78,14 +78,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FUNCTION_LAYER] = LAYOUT_universal(
     KC_F5  , KC_F6  , KC_F7 , KC_F8 , KC_F9 ,                           CPI_D100 , CPI_I100 , SCRL_DVI , SCRL_DVD, QK_BOOT   ,
     KC_F10  , KC_F1  , KC_F2 , KC_F3 , KC_F4 ,                          _______ , _______ , _______ , _______, _______   ,
-    _______ , _______ , _______ , KC_F12 , KC_F11     ,                 TG(_GAME_LAYER) , _______ , KC_BTN1 , KC_BTN2, KC_BTN3   ,
+    _______ , _______ , _______ , KC_F12 , KC_F11     ,                 DF(_GAME_LAYER) , _______ , KC_BTN1 , KC_BTN2, KC_BTN3   ,
     _______  , _______   , _______  , _______  , KC_LSFT  , KC_BTN2  ,  _______ , _______ , _______ , _______, _______, _______
   ),
   [_GAME_LAYER] = LAYOUT_universal(
     KC_Q , KC_W , KC_E , KC_R , KC_T ,                                  KC_Y , KC_U , KC_I , KC_O , KC_P ,
     KC_A , KC_S , KC_D , KC_F , KC_G ,                                  KC_H , KC_J , KC_K , KC_L , KC_P ,
     KC_Z , KC_X , KC_C , KC_V , KC_B ,                                  KC_N , KC_M , KC_BTN1 , MO_RBTN , KC_BTN2 ,
-    _______ , _______   , _______  , KC_BSPC  , KC_LSFT  , _______  ,  TG(_GAME_LAYER) , KC_BTN2 , _______ , _______, _______, _______
+    _______ , _______   , _______  , KC_BSPC  , KC_LSFT  , _______  ,  DF(_DEFAULT_LAYER) , KC_BTN2 , _______ , _______, _______, _______
   ),
 };
 // clang-format on
@@ -125,6 +125,12 @@ bool led_update_user(led_t led_state) {
 layer_state_t default_layer_state_set_user(layer_state_t state) {
 #ifdef RGBLIGHT_ENABLE
     rgblight_set_layer_state(LAYER_LIGHTING_DEFAULT, layer_state_cmp(state, _DEFAULT_LAYER));
+    rgblight_set_layer_state(LAYER_LIGHTING_GAME, layer_state_cmp(state, _GAME_LAYER));
+    if (layer_state_cmp(state, _GAME_LAYER)) {
+        autoshift_disable();
+    } else {
+        autoshift_enable();
+    }
 #endif
     return state;
 }
@@ -143,11 +149,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(LAYER_LIGHTING_MOUSE_HOR, layer_state_cmp(state, _MOUSE_LAYER) && (mode == KEYBALL_SCROLLSNAP_MODE_HORIZONTAL));
     rgblight_set_layer_state(LAYER_LIGHTING_MOUSE_FRE, layer_state_cmp(state, _MOUSE_LAYER) && (mode == KEYBALL_SCROLLSNAP_MODE_FREE));
 #endif
-    if (layer_state_cmp(state, _GAME_LAYER)) {
-        autoshift_disable();
-    } else {
-        autoshift_enable();
-    }
     return state;
 }
 
