@@ -143,6 +143,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(LAYER_LIGHTING_MOUSE_HOR, layer_state_cmp(state, _MOUSE_LAYER) && (mode == KEYBALL_SCROLLSNAP_MODE_HORIZONTAL));
     rgblight_set_layer_state(LAYER_LIGHTING_MOUSE_FRE, layer_state_cmp(state, _MOUSE_LAYER) && (mode == KEYBALL_SCROLLSNAP_MODE_FREE));
 #endif
+    if (layer_state_cmp(state, _GAME_LAYER)) {
+        autoshift_disable();
+    } else {
+        autoshift_enable();
+    }
     return state;
 }
 
