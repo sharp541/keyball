@@ -47,10 +47,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format offLl
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
-    KC_B     , KC_M     , KC_D     , KC_Z   , KC_X  ,                 KC_DOT  , KC_COMM , KC_E    , KC_P    , KC_V ,
-    KC_S     , KC_K     , KC_T     , KC_N   , KC_L  ,                 KC_F    , KC_A    , KC_O    , KC_I    , KC_U ,
-    KC_W     , KC_H     , KC_G     , KC_R   , KC_J  ,                 KC_Q    , KC_Y    , KC_BTN1 , MO_RBTN , KC_C ,
-    _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , CW_TOGG
+    KC_H     , KC_K     , KC_R     , KC_Z   , KC_Q  ,                 KC_DOT  , KC_COMM , KC_E    , KC_P    , KC_W ,
+    KC_M     , KC_S     , KC_N     , KC_T   , KC_G  ,                 KC_C    , KC_A    , KC_O    , KC_I    , KC_U ,
+    KC_B     , KC_F     , KC_L     , KC_D   , KC_J  ,                 KC_X    , KC_Y    , KC_BTN1 , MO_RBTN , KC_V ,
+    _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , _______
   ),
 
   [_NUMBER_LAYER] = LAYOUT_universal(
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q , KC_W , KC_E , KC_R , KC_T ,                                  KC_Y , KC_U , KC_I , KC_O , KC_P ,
     KC_A , KC_S , KC_D , KC_F , KC_G ,                                  KC_H , KC_J , KC_K , KC_L , KC_P ,
     KC_Z , KC_X , KC_C , KC_V , KC_B ,                                  KC_N , KC_M , KC_BTN1 , MO_RBTN , KC_BTN2 ,
-    _______ , _______   , _______  , KC_BSPC  , KC_LSFT  , _______  ,  DF(_DEFAULT_LAYER) , KC_BTN2 , _______ , _______, _______, _______
+    _______ , _______   , _______  , KC_SPC  , KC_LSFT  , _______  ,  DF(_DEFAULT_LAYER) , KC_BTN2 , _______ , _______, _______, _______
   ),
 };
 // clang-format on
@@ -100,6 +100,7 @@ combo_t key_combos[] = {
     [UARR_R_COMBO] = COMBO(uarr_r_combo, KC_UP),
     [DARR_R_COMBO] = COMBO(darr_r_combo, KC_DOWN),
     [DOT_R_COMBO] = COMBO(dot_r_combo, KC_DOT),
+    [COMMA_COMBO] = COMBO(comma_combo, KC_COMM),
     [BSPC_R_COMBO] = COMBO(bspc_r_combo, C(KC_BSPC)),
     [BSPC_L_COMBO] = COMBO(bspc_l_combo, KC_BSPC),
     [HOME_R_COMBO] = COMBO(home_r_combo, KC_HOME),
@@ -107,7 +108,7 @@ combo_t key_combos[] = {
     [ESC_R_COMBO] = COMBO(esc_r_combo, KC_ESC),
     [ALT_L_COMBO] = COMBO(alt_l_combo, KC_LALT),
     [GUI_L_COMBO] = COMBO(gui_l_combo, KC_LGUI),
-    [CTRL_L_COMBO] = COMBO(ctrl_l_combo, KC_LCTL),
+    [CW_COMBO] = COMBO(cw_combo, KC_CAPS),
 };
 #endif
 
