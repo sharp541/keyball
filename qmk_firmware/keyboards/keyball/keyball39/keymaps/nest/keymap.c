@@ -47,7 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // clang-format offLl
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT_LAYER] = LAYOUT_universal(
-    KC_H     , KC_K     , KC_R     , KC_Z   , KC_Q  ,                 KC_DOT  , KC_COMM , KC_E    , KC_P    , KC_W ,
+    KC_H     , KC_K     , KC_R     , KC_Z   , _______  ,                 _______  , KC_Q , KC_E    , KC_P    , KC_W ,
     KC_M     , KC_S     , KC_N     , KC_T   , KC_G  ,                 KC_C    , KC_A    , KC_O    , KC_I    , KC_U ,
     KC_B     , KC_F     , KC_L     , KC_D   , KC_J  ,                 KC_X    , KC_Y    , KC_BTN1 , MO_RBTN , KC_V ,
     _______  , _______  , _______  , FN_L   , NUM_L , _______,         RCTL_T(KC_DELETE) , SYM_R , _______ , _______ , _______ , _______
@@ -108,7 +108,7 @@ combo_t key_combos[] = {
     [ESC_R_COMBO] = COMBO(esc_r_combo, KC_ESC),
     [ALT_L_COMBO] = COMBO(alt_l_combo, KC_LALT),
     [GUI_L_COMBO] = COMBO(gui_l_combo, KC_LGUI),
-    [CW_COMBO] = COMBO(cw_combo, KC_CAPS),
+    [CW_COMBO] = COMBO(cw_combo, CW_TOGG),
 };
 #endif
 
